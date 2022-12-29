@@ -1,0 +1,62 @@
+<body>
+    <h1 class="title">{{title}}</h1>
+<div class="container">
+
+    <div *ngIf="currentMovie"  >
+      <button class="btn btn-warning" (click)="editMovie(currentMovie.Id)">Edit</button>
+
+        <div class="card-body">
+            <body>
+  
+    <a  href="/mainpage"class="card-btn" (click)="gotomain"> Return </a>
+
+
+    <div  class="split left" style="margin-right: 20% ;margin-left: 10%;" >
+   
+     <!-- Portfolio Item Heading -->
+     <br/>
+     
+     <h2 class="my-4 " style="color: white;">{{ currentMovie.Title}}
+       <small>
+         <span class="badge badge-primary">
+         <h2>( {{ currentMovie.Year }} ) </h2>
+         </span>
+       </small>
+     </h2>
+   
+     <!-- Portfolio Item Row -->
+     <div class="row">
+   
+       <div class="col-md-8">
+         <img 
+           class="img-fluid" appDirective
+           img src="{{ currentMovie.Poster }}">
+           <ul class="list-list ">
+               <li class="list-list-item" class="list-group-item" *ngFor="let gg of currentMovie.Genre">
+                <button class="font" ><span [ngStyle]="{'background-color':gg | movieGenre }"></span>{{gg}}</button>
+              
+             </li>
+           </ul>
+          
+       </div>
+   
+       <div class="card" style="width: 25rem; background-color: rgba(75, 161, 241, 0.24);margin-right: -200px;">
+         <span 
+           class="badge">
+           <p> Director : {{currentMovie.Director}}</p><br/>
+           <p> Writer : {{currentMovie.Writer}}</p>
+         </span>
+         <h2 style="color: aliceblue;">Country :</h2><p style="color: aliceblue;">{{ currentMovie.Country }}</p>
+         <h2 style="color: aliceblue;">Language :</h2><p style="color: aliceblue;">{{ currentMovie.Language }}</p>
+         <h2 style="color: aliceblue;">Actors :</h2><p style="color: aliceblue;">{{ currentMovie.Actors }}</p>
+         <h2 style="color: aliceblue;">Awards :</h2><p style="color: aliceblue;">{{ currentMovie.Awards }}</p>
+         <h3 class="my-3" style="color: aliceblue;">Plot:</h3>
+         <p style="color: aliceblue;">{{ currentMovie.Pilot }}</p>
+        
+       </div>
+   
+     </div>
+   
+     
+   </div>
+    </body>

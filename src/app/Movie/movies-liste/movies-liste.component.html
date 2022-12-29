@@ -1,0 +1,25 @@
+
+<body>
+  <a href="/loginpage"class="return-button" > Log Out </a>
+
+ <h1 class="title">{{title}}</h1>
+  <section class="product">
+    <div class="product-container" >
+       
+  <div class="product-card" *ngFor="let film of movies">
+    <div class="product-image">
+      <span class="year-tag">{{film.Year}}</span>
+        <img src={{film.Poster}} class="product-thumb" alt="">
+        <button (click)="gotoDetail(film.Id)" class="card-btn">more details</button>
+    </div>
+    <div class="product-info">
+        <h2 class="product-brand">{{ film.Title }}</h2>
+    </div>
+    
+    
+</div>
+        
+
+    </div>
+</section>
+ </body>
